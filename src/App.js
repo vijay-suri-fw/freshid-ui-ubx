@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { useFetch } from './CustomHooks/useFetch';
 
 function App() {
+  const { loading, error, data } = useFetch('getSubscriptions');
+  const data2 = useFetch('getBundleFeatureMatrix');
+  const data3 = useFetch('getSubscriptionRenewalEstimate');
+  const data4 = useFetch('getPlans');
+  const data5 = useFetch('getAddonsByIds');
+  console.log({ error, loading, data, data2, data3, data4, data5})
+
   return (
     <div className="App">
       <header className="App-header">
